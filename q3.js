@@ -60,37 +60,39 @@ function condense(head) {
 
 // Test cases
 function runTests() {
+    const log = (msg) => process.stdout.write(msg + '\n');
+
     // Test Case 1: Example from the problem
-    console.log("Test Case 1:");
+    log("Test Case 1:");
     let list1 = createLinkedList([3, 4, 3, 2, 6, 1, 2, 6]);
     let result1 = linkedListToArray(condense(list1));
-    console.log("Input:  [3, 4, 3, 2, 6, 1, 2, 6]");
-    console.log("Output:", result1);
-    console.log("Expected: [3, 4, 2, 6, 1]");
+    log(`Input:  [3, 4, 3, 2, 6, 1, 2, 6]`);
+    log(`Output: [${result1.join(', ')}]`);
+    log(`Expected: [3, 4, 2, 6, 1]`);
     
     // Test Case 2: Empty list
-    console.log("\nTest Case 2:");
+    log("\nTest Case 2:");
     let list2 = createLinkedList([]);
     let result2 = linkedListToArray(condense(list2));
-    console.log("Input: []");
-    console.log("Output:", result2);
-    console.log("Expected: []");
+    log(`Input: []`);
+    log(`Output: [${result2.join(', ')}]`);
+    log(`Expected: []`);
     
     // Test Case 3: Single element
-    console.log("\nTest Case 3:");
+    log("\nTest Case 3:");
     let list3 = createLinkedList([1]);
     let result3 = linkedListToArray(condense(list3));
-    console.log("Input: [1]");
-    console.log("Output:", result3);
-    console.log("Expected: [1]");
+    log(`Input: [1]`);
+    log(`Output: [${result3.join(', ')}]`);
+    log(`Expected: [1]`);
     
     // Test Case 4: All duplicates
-    console.log("\nTest Case 4:");
+    log("\nTest Case 4:");
     let list4 = createLinkedList([1, 1, 1, 1]);
     let result4 = linkedListToArray(condense(list4));
-    console.log("Input: [1, 1, 1, 1]");
-    console.log("Output:", result4);
-    console.log("Expected: [1]");
+    log(`Input: [1, 1, 1, 1]`);
+    log(`Output: [${result4.join(', ')}]`);
+    log(`Expected: [1]`);
 }
 
 // Run the tests
