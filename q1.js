@@ -24,7 +24,6 @@ function manipulateStudentRecord(obj, operation, prop, newValue) {
     return result;
 }
 
-// Function to process input and run test cases
 function processInput(input) {
     const lines = input.trim().split('\n');
     const n = parseInt(lines[0]);
@@ -32,12 +31,12 @@ function processInput(input) {
     // Create the initial object from input
     const obj = {};
     for (let i = 1; i <= n; i++) {
-        const [prop, value] = lines[i].split(' ');
+        const [prop, value] = lines[i].trim().split(' ');
         obj[prop] = value;
     }
     
-    // Get operation parameters
-    const [operation, prop, newValue] = lines[n + 1].split(' ');
+    // Get operation parameters from the last line
+    const [operation, prop, newValue] = lines[n + 1].trim().split(' ');
     
     // Perform the operation
     const result = manipulateStudentRecord(obj, operation, prop, newValue);
@@ -50,28 +49,32 @@ function processInput(input) {
         });
 }
 
-// Test cases
-const testCase0 = `3
+// Test Case 0
+const input0 = `3
 name John
 lastName Bliss
 city Florida
 edit city Seattle`;
 
-const testCase1 = `3
+console.log("Sample Case 0 Output:");
+processInput(input0);
+
+// Test Case 1
+const input1 = `3
 name John
 lastName Bliss
 city Florida
 delete city`;
 
-const testCase2 = `3
+console.log("\nSample Case 1 Output:");
+processInput(input1);
+
+// Test Case 2
+const input2 = `3
 name John
 lastName Bliss
 city Florida
 edit abc Tor`;
 
-console.log("Test Case 0:");
-processInput(testCase0);
-console.log("\nTest Case 1:");
-processInput(testCase1);
-console.log("\nTest Case 2:");
-processInput(testCase2); 
+console.log("\nSample Case 2 Output:");
+processInput(input2); 
